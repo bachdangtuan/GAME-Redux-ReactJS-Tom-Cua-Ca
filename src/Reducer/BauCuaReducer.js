@@ -69,8 +69,39 @@ export default (state = initialState, action) => {
                 mangXucXacNgauNhien.push(XucXacNgauNhien)
             }
 
-            // Xét lại state
+            // Xét lại state để render ra màn hình
             state.mangXucXac =  mangXucXacNgauNhien
+            // Xử lý so sánh mảng xúc xắc ngẫu nhiên vừa render ra với mảng đặt cược ban đầu
+            mangXucXacNgauNhien.forEach((xxNH,index) =>{
+                console.log("xxNH",index);
+                let indexXN = state.danhSachCuoc.findIndex(qc => qc.ma === xxNH.ma)
+                    console.log("indexXN",indexXN);
+                    console.log("state.danhSachCuoc[indexXN]",state.danhSachCuoc[indexXN].diemCuoc);
+                if (indexXN !== -1) {
+                    // Xử lý cộng tiền
+                   state.tongDiem += state.danhSachCuoc[indexXN].diemCuoc
+                }
+            })
+            // Xử lý hoàn tiền mỗi lượt chơi
+            state.danhSachCuoc.forEach((sp,index) =>{
+                let indexXXNH = mangXucXacNgauNhien.findIndex((xucxac,index2) =>{
+                  return xucxac.ma === sp.ma
+                })
+                if (indexXXNH!==-1) {
+                    state.tongDiem +=sp.diemCuoc
+                }
+            })
+            // Làm mới lượt đặt
+            state.danhSachCuoc = state.danhSachCuoc.map((sp2,index) =>{
+                return {...sp2, diemCuoc:0}
+            })
+            
+
+
+
+
+
+
             return {...state}
         }
         
