@@ -28,6 +28,30 @@ export default (state = initialState, action) => {
             const danhSachDatCuocUpdate = [...state.danhSachCuoc]
             const index = danhSachDatCuocUpdate.findIndex(qc => qc.ma ===action.quanCuoc.ma)
             console.log(index);
+            // if (index != -1) {
+            //     if (action.tangGiam && state.tongDiem >0) {
+            //         state.tongDiem-=10000;
+            //         danhSachDatCuocUpdate[index].diemCuoc +=10000;
+            //     }else{
+            //         if (danhSachDatCuocUpdate[index].diemCuoc>0) {
+            //             danhSachDatCuocUpdate[index].diemCuoc -=10000;
+            //             state.tongDiem+=10000;
+            //         }
+            //     }
+            // }
+            
+            if (index != -1) {
+                if (action.tangGiam ===true && state.tongDiem >0) {
+                    state.tongDiem-=10000;
+                    danhSachDatCuocUpdate[index].diemCuoc +=10000;
+                }
+                if (action.tangGiam ===false && action.quanCuoc.diemCuoc >0) {
+                    state.tongDiem+=10000;
+                    danhSachDatCuocUpdate[index].diemCuoc -=10000;
+                }
+            }
+            console.log('tong diem',state.tongDiem);
+            state.danhSachCuoc = danhSachDatCuocUpdate;
         }
 
         default:

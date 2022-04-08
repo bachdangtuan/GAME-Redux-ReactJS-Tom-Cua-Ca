@@ -26,7 +26,7 @@ export default function QuanCuoc(props) {
                 }}>{quanCuoc.diemCuoc}$</span>
                 <button className='btn btn-danger mt-2' onClick={() => {
                     dispatch({
-                        type: 'DAT_CUOC_BAU_CAU',
+                        type: 'DAT_CUOC_BAU_CUA',
                         quanCuoc,
                         tangGiam: false
                     })

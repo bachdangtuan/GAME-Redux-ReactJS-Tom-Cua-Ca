@@ -2,4 +2,7 @@
 
 ## Xử lý nghiệp vụ
 - .....
-- Sóc ra 3 con giống nhau thì x 3 lần Tài Khoản
+- Xử lý action đặt cược trên redux:
+    1. Tìm index khi click đặt cược 
+     (Copy tạo mảng mới đặt tên: danhsachDatCuocUpdate từ store state danhSachCuoc )
+    2. Duyệt mảng danhsachDatCuocUpdate findIndex trả về quân cược mã trùng với mã quân cược mà action gửi lên thì thực hiện sét lại tổng thưởng và điểm cược trong store
