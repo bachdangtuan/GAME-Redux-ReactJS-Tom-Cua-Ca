@@ -75,6 +75,7 @@ export default function DanhSachXucXac(props) {
         </h3>
 
       </div>
+      {/* LUẬT CHƠI */}
 
     </div>
   )
