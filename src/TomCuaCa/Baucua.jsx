@@ -7,7 +7,7 @@ export default function Baucua() {
   return (
     <div className='container-fluid'>
         <DiemCuoc></DiemCuoc>
-        <div className="row">
+        <div className="row container m-auto">
                 <div className="col-8">
                     <DanhSachQuanCuoc></DanhSachQuanCuoc>
                 </div>

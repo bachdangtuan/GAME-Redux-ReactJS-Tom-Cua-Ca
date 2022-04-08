@@ -39,21 +39,28 @@ export default (state = initialState, action) => {
             //         }
             //     }
             // }
-            
+
             if (index != -1) {
                 if (action.tangGiam ===true && state.tongDiem >0) {
-                    state.tongDiem-=10000;
-                    danhSachDatCuocUpdate[index].diemCuoc +=10000;
+                    state.tongDiem-=5000;
+                    danhSachDatCuocUpdate[index].diemCuoc +=5000;
                 }
                 if (action.tangGiam ===false && action.quanCuoc.diemCuoc >0) {
-                    state.tongDiem+=10000;
-                    danhSachDatCuocUpdate[index].diemCuoc -=10000;
+                    state.tongDiem+=5000;
+                    danhSachDatCuocUpdate[index].diemCuoc -=5000;
                 }
             }
             console.log('tong diem',state.tongDiem);
-            state.danhSachCuoc = danhSachDatCuocUpdate;
+          state.danhSachCuoc = danhSachDatCuocUpdate;
         }
 
+        case 'TANG_TIEN':{
+            console.log(action);
+            if (action.diemCuoc === 0) {
+                state.tongDiem+=10000;
+            }
+    
+        }
         default:
             return {...state}
     }

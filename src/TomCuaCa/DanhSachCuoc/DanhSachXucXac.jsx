@@ -27,7 +27,10 @@ export default function DanhSachXucXac(props) {
                 </div>
             </div>
         </div>
-            <button className='btn btn-primary mt-5'>
+            <button className='btn btn-primary mt-5' style={{
+              marginLeft:'35%',
+              padding:'40px'
+            }}>
                 XÓC ĐĨA
             </button>
     </div>

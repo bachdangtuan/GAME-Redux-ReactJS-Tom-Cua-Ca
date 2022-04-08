@@ -10,9 +10,9 @@ export default function QuanCuoc(props) {
     return (
         <div className=''>
             <img src={quanCuoc.hinhAnh} alt="" srcset="" className='d-block' style={{
-                width: '75%'
+                width: '100%'
             }} />
-            <div className='pb-3 bg-success w-75 text-center mb-3'>
+            <div className='pb-3 bg-success w-100 text-center m-auto'>
                 <button className='btn btn-danger mt-2' onClick={() => {
                     console.log('ấn test đặt ');
                     dispatch({
@@ -21,9 +21,9 @@ export default function QuanCuoc(props) {
                         tangGiam: true
                     })
                 }}>+ </button>
-                <span style={{
-                    fontSize: '40px'
-                }}>{quanCuoc.diemCuoc}$</span>
+                <span className='p-2' style={{
+                    fontSize: '20px'
+                }}>{quanCuoc.diemCuoc.toLocaleString()}$</span>
                 <button className='btn btn-danger mt-2' onClick={() => {
                     dispatch({
                         type: 'DAT_CUOC_BAU_CUA',

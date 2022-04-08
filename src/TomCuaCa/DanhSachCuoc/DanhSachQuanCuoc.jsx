@@ -9,7 +9,7 @@ export default function DanhSachQuanCuoc() {
 
     const renderDanhSachCuoc = ()=> {
         return danhSachCuoc.map((sp,index) =>{
-            return  <div className='col-4' key={index}>
+            return  <div className='col-4 pb-3' key={index}>
                     <QuanCuoc quanCuoc={sp}></QuanCuoc>
             </div>
         })
