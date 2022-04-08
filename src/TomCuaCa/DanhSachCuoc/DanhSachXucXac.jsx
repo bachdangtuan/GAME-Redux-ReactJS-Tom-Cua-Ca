@@ -49,6 +49,8 @@ export default function DanhSachXucXac(props) {
         }}>
          <h1>ÚP BÁT</h1>
         </button>
+
+        <button className='btn btn-dark text-light' onClick={()=>{window.location.reload()}}><h3>RESET</h3></button>
       </div>
 
 
@@ -73,6 +75,7 @@ export default function DanhSachXucXac(props) {
         </h3>
 
       </div>
+
     </div>
   )
 }

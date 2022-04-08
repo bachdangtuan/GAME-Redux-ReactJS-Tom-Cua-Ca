@@ -10,7 +10,7 @@ const initialState = {
         { ma: 'ca', hinhAnh: './img/ca.png', diemCuoc: 0 },
         { ma: 'tom', hinhAnh: './img/tom.png', diemCuoc: 0 }
     ],
-    tongDiem: 100000,
+    tongDiem: 0,
     mangXucXac: [
         { ma: 'nai', hinhAnh: './img/nai.png' },
         { ma: 'ca', hinhAnh: './img/ca.png' },
@@ -58,6 +58,18 @@ export default (state = initialState, action) => {
         case 'TANG_TIEN': {
             if (action.diemCuoc === 0) {
                 state.tongDiem += 10000;
+            }
+            return {...state}
+        }
+        case 'TANG_TIEN1': {
+            if (action.diemCuoc === 0) {
+                state.tongDiem += 100000;
+            }
+            return {...state}
+        }
+        case 'TANG_TIEN2': {
+            if (action.diemCuoc === 0) {
+                state.tongDiem += 1000000;
             }
             return {...state}
         }
