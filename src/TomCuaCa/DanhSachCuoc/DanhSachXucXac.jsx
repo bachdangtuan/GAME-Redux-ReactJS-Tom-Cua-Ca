@@ -1,10 +1,11 @@
 import React from 'react'
 import XucXac from './XucXac'
 import {head, deburr} from 'lodash'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 export default function DanhSachXucXac(props) {
 
+  const dispatch = useDispatch();
   const mangXucXac = useSelector (state => state.BauCuaReducer.mangXucXac)
 
   return (
@@ -30,6 +31,10 @@ export default function DanhSachXucXac(props) {
             <button className='btn btn-primary mt-5' style={{
               marginLeft:'35%',
               padding:'40px'
+            }} onClick={() =>{
+              dispatch({
+                  type:'XOC_DIA',
+              })
             }}>
                 XÓC ĐĨA
             </button>

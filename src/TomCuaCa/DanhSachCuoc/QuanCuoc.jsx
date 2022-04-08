@@ -4,7 +4,6 @@ import { useDispatch } from 'react-redux';
 
 export default function QuanCuoc(props) {
     const { quanCuoc } = props;
-
     const dispatch = useDispatch();
 
     return (

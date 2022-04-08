@@ -6,7 +6,6 @@ export default function DiemCuoc(props) {
   const diemCuoc = useSelector(state => state.BauCuaReducer.tongDiem)
 
 
-  console.log(diemCuoc);
 
   const dispatch = useDispatch();
 

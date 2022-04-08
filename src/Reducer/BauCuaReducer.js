@@ -22,12 +22,12 @@ const initialState = {
 export default (state = initialState, action) => {
     switch (action.type) {
 
-        case 'DAT_CUOC_BAU_CUA':{
+        case 'DAT_CUOC_BAU_CUA': {
             //Tìm trong danh sách cược quân cược nào đc click tăng hoặc giảm điểm
-            console.log('action',action);
+            console.log('action', action);
             const danhSachDatCuocUpdate = [...state.danhSachCuoc]
-            const index = danhSachDatCuocUpdate.findIndex(qc => qc.ma ===action.quanCuoc.ma)
-            console.log(index);
+            const index = danhSachDatCuocUpdate.findIndex(qc => qc.ma === action.quanCuoc.ma)
+            console.log("index",index);
             // if (index != -1) {
             //     if (action.tangGiam && state.tongDiem >0) {
             //         state.tongDiem-=10000;
@@ -41,27 +41,40 @@ export default (state = initialState, action) => {
             // }
 
             if (index != -1) {
-                if (action.tangGiam ===true && state.tongDiem >0) {
-                    state.tongDiem-=5000;
-                    danhSachDatCuocUpdate[index].diemCuoc +=5000;
+                if (action.tangGiam === true && state.tongDiem > 0) {
+                    state.tongDiem -= 5000;
+                    danhSachDatCuocUpdate[index].diemCuoc += 5000;
                 }
-                if (action.tangGiam ===false && action.quanCuoc.diemCuoc >0) {
-                    state.tongDiem+=5000;
-                    danhSachDatCuocUpdate[index].diemCuoc -=5000;
+                if (action.tangGiam === false && action.quanCuoc.diemCuoc > 0) {
+                    state.tongDiem += 5000;
+                    danhSachDatCuocUpdate[index].diemCuoc -= 5000;
                 }
             }
-            console.log('tong diem',state.tongDiem);
-          state.danhSachCuoc = danhSachDatCuocUpdate;
+            console.log('danhSachDatCuocUpdate',danhSachDatCuocUpdate);
+            state.danhSachCuoc = danhSachDatCuocUpdate;
+            return {...state}
         }
 
-        case 'TANG_TIEN':{
-            console.log(action);
+        case 'TANG_TIEN': {
             if (action.diemCuoc === 0) {
-                state.tongDiem+=10000;
+                state.tongDiem += 10000;
             }
-    
-        }
-        default:
             return {...state}
+        }
+        case 'XOC_DIA': {
+            const  mangXucXacNgauNhien = [];
+            for (let i = 0; i < 3; i++) {
+                let soNgauNhien = Math.floor(Math.random() * 6);
+                const XucXacNgauNhien = state.danhSachCuoc[soNgauNhien];
+                mangXucXacNgauNhien.push(XucXacNgauNhien)
+            }
+
+            // Xét lại state
+            state.mangXucXac =  mangXucXacNgauNhien
+            return {...state}
+        }
+        
+        default:
+            return { ...state }
     }
 }
