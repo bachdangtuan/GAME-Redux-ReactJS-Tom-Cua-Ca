@@ -21,7 +21,7 @@ export default function QuanCuoc(props) {
                         tangGiam: true
                     })
                 }}>+ </button>
-                <span className='p-5' style={{
+                <span style={{
                     fontSize: '40px'
                 }}>{quanCuoc.diemCuoc}$</span>
                 <button className='btn btn-danger mt-2' onClick={() => {
