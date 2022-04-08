@@ -29,24 +29,30 @@ export default function DanhSachXucXac(props) {
         </div>
       </div>
       <div className="row m-auto pt-5">
-        <button id='xocBat' className='btn btn-primary m-auto' style={{
+        <button id='xocBat' className='btn btn-success m-auto' style={{
           display:'none'
         }} onClick={() => {
           document.getElementById('moBat').style.display = 'none';
-          //  document.getElementById('moBat').className = 'moBat';
+           document.getElementById('xocBat').style.display = 'none';
+           document.getElementById('upBat').style.display = 'block'
           dispatch({
             type: 'XOC_DIA',
           })
         }}>
-          MỞ BÁT
+          <h1>  MỞ BÁT</h1>
         </button>
-        <button className='btn btn-primary  m-auto' onClick={() => {
+
+        {/* Úp Bát */}
+        <button id='upBat' className='btn btn-primary  m-auto' style={{display:'block'}} onClick={() => {
           document.getElementById('moBat').style.display = 'block'
           document.getElementById('xocBat').style.display = 'none'
         }}>
-          ÚP BÁT
+         <h1>ÚP BÁT</h1>
         </button>
       </div>
+
+
+      {/* Đĩa */}
       <div id='moBat' style={{
         width: '350px',
         height: '350px',
@@ -59,10 +65,12 @@ export default function DanhSachXucXac(props) {
         display: 'none'
       }} className='image' onClick={()=>{
         document.getElementById('xocBat').style.display = 'block';
+        document.getElementById('upBat').style.display = 'none';
       }} >
-        <h1 className='text-center'>
-             KICK CHUỘT VÀO ĐỂ XÓC
-        </h1>
+        <h3 className='text-center'>
+             DI CHUỘT VÀO ĐỂ XÓC <br/>
+             CLICK ĐỂ MỞ BÁT
+        </h3>
 
       </div>
     </div>
