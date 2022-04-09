@@ -13,7 +13,7 @@ export default function QuanCuoc(props) {
             }} />
             <div className='pb-3 bg-success w-100 text-center m-auto'>
                 <button className='btn btn-danger mt-2' onClick={() => {
-                    console.log('ấn test đặt ');
+                    // console.log('ấn test đặt ');
                     dispatch({
                         type: 'DAT_CUOC_BAU_CUA',
                         quanCuoc,

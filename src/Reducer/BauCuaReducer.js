@@ -27,7 +27,6 @@ export default (state = initialState, action) => {
             console.log('action', action);
             const danhSachDatCuocUpdate = [...state.danhSachCuoc]
             const index = danhSachDatCuocUpdate.findIndex(qc => qc.ma === action.quanCuoc.ma)
-            console.log("index",index);
             // if (index != -1) {
             //     if (action.tangGiam && state.tongDiem >0) {
             //         state.tongDiem-=10000;
@@ -87,8 +86,8 @@ export default (state = initialState, action) => {
             mangXucXacNgauNhien.forEach((xxNH,index) =>{
                 console.log("xxNH",index);
                 let indexXN = state.danhSachCuoc.findIndex(qc => qc.ma === xxNH.ma)
-                    console.log("indexXN",indexXN);
-                    console.log("state.danhSachCuoc[indexXN]",state.danhSachCuoc[indexXN].diemCuoc);
+                    // console.log("indexXN",indexXN);
+                    // console.log("state.danhSachCuoc[indexXN]",state.danhSachCuoc[indexXN].diemCuoc);
                 if (indexXN !== -1) {
                     // Xử lý cộng tiền
                    state.tongDiem += state.danhSachCuoc[indexXN].diemCuoc
