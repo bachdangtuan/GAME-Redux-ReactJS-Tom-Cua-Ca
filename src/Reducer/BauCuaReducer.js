@@ -41,12 +41,12 @@ export default (state = initialState, action) => {
 
             if (index != -1) {
                 if (action.tangGiam === true && state.tongDiem > 0) {
-                    state.tongDiem -= 5000;
-                    danhSachDatCuocUpdate[index].diemCuoc += 5000;
+                    state.tongDiem -= 50000;
+                    danhSachDatCuocUpdate[index].diemCuoc += 50000;
                 }
                 if (action.tangGiam === false && action.quanCuoc.diemCuoc > 0) {
-                    state.tongDiem += 5000;
-                    danhSachDatCuocUpdate[index].diemCuoc -= 5000;
+                    state.tongDiem += 50000;
+                    danhSachDatCuocUpdate[index].diemCuoc -= 50000;
                 }
             }
             console.log('danhSachDatCuocUpdate',danhSachDatCuocUpdate);
